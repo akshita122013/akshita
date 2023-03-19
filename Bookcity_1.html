@@ -1,0 +1,186 @@
+<html>
+<head>
+<title>Bookcity</title>
+</head>
+<body style="background-color:lightgreen;">
+<h1>
+Bookcity
+</h1>
+<h1 style="background-color:Tomato;">Bookcity</h1>
+<img src="bookwrld.bmp" />
+
+<label for="bookgener">Choose a Book category:</label>
+<select name="bookgener" id="bookgener" onchange="ChangeBookList()">
+  <option value="-" selected>-</option>
+<option value="fiction">Fiction</option>
+  <option value="biography">Biography</option>
+  <option value="magic">Magic</option>
+  <option value="science">Science</option>
+</select>
+<label for="booklist">Book List</label>
+<select name="booklist" id="booklist"></select> 
+<script>
+var carsAndModels = {};
+carsAndModels['fiction'] = ['Diary of a Wimpy Kid', 'The Very Hungary Caterpiller', 'Matilda'];
+carsAndModels['biography'] = ['Long walk to Freedom', 'The Diary of a young Girl', 'Dreams from my Father'];
+carsAndModels['magic'] = ['Philosopher Stone', 'Chamber of Secrets' , 'Prisoner of Azkaban', 'Magic Shoelaces'];
+carsAndModels['science'] = ['Human Body', 'Planet Earth','Solar System' ,'Science Squad'];
+function ChangeBookList() {
+    var carList = document.getElementById("bookgener");
+    var modelList = document.getElementById("booklist");
+    var selCar = carList.options[carList.selectedIndex].value;
+    while (modelList.options.length) {
+        modelList.remove(0);
+    }
+    var cars = carsAndModels[selCar];
+    if (cars) {
+        var i;
+        for (i = 0; i < cars.length; i++) {
+            var car = new Option(cars[i], i);
+            modelList.options.add(car);
+        }
+    }
+} 
+</script>
+
+<style>
+#myDIV {
+  width: 100%;
+  padding: 50px 0;
+  text-align: left;
+  background-color: lightgreen;
+  margin-top: 20px;
+}
+</style>
+<style>
+#myDIV1 {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+</style>
+<style>
+#myDIV2 {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightgreen;
+  margin-top: 20px;
+}
+</style>
+<label for="activity">Type of Activity:</label>
+<select name="activity" id="activity" onchange="myFunction()">
+<option value="-" selected>-</option>
+<option value="quiz">Fun Quiz</option>
+  <option value="game">Fun Game</option>
+  <option value="summary">Book Summary</option>
+</select>
+<div id="myDIV" style="display:none">
+
+<p>Where does the Dursley family live?</p>
+  <input type="radio" id="six" name="fav_language" value="NUMBER SIX, DIAGON ALLEY">
+  <label for="six">NUMBER SIX, DIAGON ALLEY</label><br>
+  <input type="radio" id="four" name="fav_language" value="NUMBER FOUR, PRIVET DRIVE">
+  <label for="four">NUMBER FOUR, PRIVET DRIVE</label><br>
+  <input type="radio" id="two" name="fav_language" value="NUMBER TWO, PRIVET DRIVE">
+  <label for="two">NUMBER TWO, PRIVET DRIVE</label><br>
+  <input type="radio" id="two" name="fav_language" value="17 NORTH STREET">
+  <label for="seventeen">17 NORTH STREET</label>
+  <br>  
+
+  <p>How old is Harry when he finds out that he is a wizard?</p>
+  <input type="radio" id="age1" name="age" value="10">
+  <label for="age1">10</label><br>
+  <input type="radio" id="age2" name="age" value="9">
+  <label for="age2">9</label><br>  
+  <input type="radio" id="age3" name="age" value="11">
+  <label for="age3">11</label><br>
+  <input type="radio" id="age4" name="age" value="12">
+  <label for="age4">12</label><br>
+
+  <p>Which animal does Professor McGonagall transform into?</p>
+  <input type="radio" id="toad" name="animal" value="TOAD">
+  <label for="age1">TOAD</label><br>
+  <input type="radio" id="dog" name="animal" value="DOG">
+  <label for="dog">DOG</label><br>  
+  <input type="radio" id="cat" name="animal" value="CAT">
+  <label for="cat">CAT</label><br>
+  <input type="radio" id="owl" name="animal" value="OWL">
+  <label for="owl">OWL</label><br>
+
+<br>
+  <input type="submit" value="Submit">
+</div>
+<div id="myDIV1" style="display:none">
+<p>Please select your favorite Game:</p>
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">HTML</label><br>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+  <label for="css">CSS</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  <label for="javascript">JavaScript</label>
+
+  <br>  
+
+  <p>Please select your age:</p>
+  <input type="radio" id="age1" name="age" value="30">
+  <label for="age1">0 - 30</label><br>
+  <input type="radio" id="age2" name="age" value="60">
+  <label for="age2">31 - 60</label><br>  
+  <input type="radio" id="age3" name="age" value="100">
+  <label for="age3">61 - 100</label><br><br>
+  <input type="submit" value="Submit">
+</div>
+<div id="myDIV2" style="display:none">
+
+ <p>Harry potter was living miserable years with 
+the Dursleys at 4.privet drive.However,on his eleventh birthday he discovers he is
+a wizard, but at the same time he also discovers the truth about 
+his parents and who to blame.His curiousity fills upon his magical
+school,Hogwarts School of Witchcraft and Wizardry .His whole school
+year although has not been the best when he has to face he who must 
+not be named.</p>
+
+  <br>  
+
+</div>
+
+<script>
+function myFunction() {
+
+  var x= document.getElementById("activity");
+  var y = document.getElementById("myDIV");
+  var y1 = document.getElementById("myDIV1");
+var y2 = document.getElementById("myDIV2");
+    y.style.display = "none";
+       y1.style.display = "none";
+    y2.style.display = "none";
+  if (x.options[x.selectedIndex].value === "quiz") {
+
+    y.style.display = "block";
+    y1.style.display = "none";
+    y2.style.display = "none";
+  }
+  else if (x.options[x.selectedIndex].value === "game") {
+
+    y1.style.display = "block";
+        y.style.display = "none";
+    y2.style.display = "none";
+  } 
+ else if (x.options[x.selectedIndex].value === "summary") {
+
+    y2.style.display = "block";
+        y.style.display = "none";
+    y1.style.display = "none";
+  }else {
+    y.style.display = "none";
+       y1.style.display = "none";
+    y2.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
